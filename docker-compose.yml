@@ -1,0 +1,82 @@
+services:
+  lnd-wallets-db:
+    networks:
+      - local
+    container_name: lnd-wallets-db
+    image: lnd-wallets-db
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    build:
+      context: docker/transactions-db/
+      dockerfile: transactions-db.dockerfile
+    volumes:
+      - ./:/app/databases
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres", "-d", "postgres" ]
+      interval: 2s
+      timeout: 30s
+      retries: 5
+      start_period: 1s
+
+  lnd-wallets-api: &api_anchor
+    container_name: lnd-wallets-api
+    image: lnd-wallets-api
+    networks:
+      local:
+        aliases:
+          - localhost
+    build:
+      context: .
+      dockerfile: docker/transactions-api/transactions-api.dockerfile
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    working_dir: /app/bin
+    command:
+      - ./app
+
+  lnd-wallets-api-prod:
+    <<: *api_anchor
+    depends_on:
+      lnd-wallets-db:
+        condition: service_healthy
+    environment:
+      - ENVIRONMENT=prod
+      - QUERY_PORT=8080
+      - EVENTSOURCE_DB_URL=jdbc:postgresql://lnd-wallets-db:5432/postgres?user=postgres&password=password
+
+  lnd-wallets-api-dev:
+    <<: *api_anchor
+    environment:
+      - ENVIRONMENT=dev
+      - QUERY_PORT=8080
+      - EVENTSOURCE_DB_URL=jdbc:postgresql://lnd-wallets-db:5432/postgres?user=postgres&password=password
+
+  newman: &newman_anchor
+    network_mode: host
+    image: postman-newman-readmodels
+    container_name: postman-newman-readmodels
+    build:
+      context: .
+      dockerfile: docker/newman/postman-newman.dockerfile
+    entrypoint: newman
+    working_dir: /postman
+    command: run LND-Web-API.postman-collection.json -k -r cli
+    volumes:
+      - ./tests:/etc/newman
+
+  newman-prod:
+    <<: *newman_anchor
+    depends_on:
+      - lnd-wallets-api-prod
+
+  newman-dev:
+    <<: *newman_anchor
+    depends_on:
+      - lnd-wallets-api-dev
+
+networks:
+  local:

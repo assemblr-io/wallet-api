@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lnd-web-api.iml" filepath="$PROJECT_DIR$/.idea/modules/lnd-web-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/lnd-web-api.buildSrc.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/lnd-web-api.services.iml" filepath="$PROJECT_DIR$/.idea/modules/services/lnd-web-api.services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.iml" filepath="$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/services/app/lnd-web-api.services.app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.iml" filepath="$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.main.iml" filepath="$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.test.iml" filepath="$PROJECT_DIR$/.idea/modules/services/database/lnd-web-api.services.database.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/services/domain/lnd-web-api.services.domain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.iml" filepath="$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.test.iml" filepath="$PROJECT_DIR$/.idea/modules/services/web/lnd-web-api.services.web.test.iml" />
+    </modules>
+  </component>
+</project>
